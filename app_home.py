@@ -14,24 +14,24 @@ while anamenu:
         if giris=="1":
             regemail=input("Kaydolmak istediğiniz eposta: ")
             regpassw=input("Şifre: ")
-            kullanicilist.append([[regemail],[regpassw],"user"])
+            kullanicilist.append([regemail,regpassw,"user"])
             print("\nKaydınız başarıyla yapıldı")
         elif giris=="2":
             while tryagain:
                 emailtry=input("Eposta: ")
                 passwtry=input("Şifre: ")
-                for i in range(1,len(kullanicilist)):
+                for i in range(0,len(kullanicilist)):
                     if emailtry==kullanicilist[i][0] and passwtry==kullanicilist[i][1]:
                         if kullanicilist[i][2]=="admin":
-                            print("\nAdmin olarak giriş yaptınız, hoşgeldiniz")
+                            print("\nAdmin olarak giriş yaptınız, hoş geldiniz")
                         else:
-                            print("\nGiriş başarılı, hoşgeldiniz")
+                            print("\nGiriş başarılı, hoş geldiniz")
                         tryagain=False
                         anamenu=False
         elif giris=="3":
             matchtrysuccess=False
             resetpassw=input("Lütfen şifresini unuttuğunuz hesabın epostasını giriniz\n")
-            for i in range(1,len(kullanicilist)):
+            for i in range(0,len(kullanicilist)):
                 if resetpassw==kullanicilist[i][0]:
                     matchtrysuccess=True
             if matchtrysuccess==True:
